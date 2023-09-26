@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="row">
+
+      
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body p-4">
+    
+            
+            <form #vinoForm="ngForm" >
+              
+              <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="vinoService.selectedVino._id">
+    
+              <div class="form-group">
+                <input type="text" name="nombre" #name="ngModel" [(ngModel)]="vinoService.selectedVino.nombre"
+                  placeholder="Introduce el nombre del vino" class="form-control">
+              </div>
+              
+              <div class="form-group">
+                <input type="text" name="denominacion" #name="ngModel" [(ngModel)]="vinoService.selectedVino.denominacion"
+                  placeholder="Introduce la denominacion" class="form-control">
+              </div>
+      
+              <div class="form-group">
+                <div class="input-field col-s12">
+                  <input type="text" name="precio" #name="ngModel" [(ngModel)]="vinoService.selectedVino.precio"
+                    value="0" placeholder="Introduce el precio" class="form-control">
+                </div>
+              </div>
+              <div class="form-group">
+                <input type="text" name="color" #name="ngModel" [(ngModel)]="vinoService.selectedVino.color"
+                  placeholder="Introduce el color del vino" class="form-control">
+              </div>
+              <div class="form-group">
+                <input type="text" name="tipo" #name="ngModel" [(ngModel)]="vinoService.selectedVino.tipo"
+                  placeholder="Introduce el tipo del vino" class="form-control">
+              </div>
+              <div class="form-group">
+                <input type="text" name="imagePath" #name="ngModel" [(ngModel)]="vinoService.selectedVino.imagePath"
+                  placeholder="Introduce el path de la imagen" class="form-control">
+              </div>
+              <div class="form-group">
+                <input type="text" name="cantidad" #name="ngModel" [(ngModel)]="vinoService.selectedVino.cantidad"
+                  placeholder="Introduce la cantidad" class="form-control">
+              </div>
+
+              <div class="form-group">
+                <input type="text" name="precioTotal" #name="ngModel" [(ngModel)]="vinoService.selectedVino.precioTotal"
+                  placeholder="Introduce el precio total" class="form-control">
+              </div>
+    
+              <button class="btn btn-primary mr-2" (click)="resetForm(vinoForm)">Clean</button>
+              <input type="submit" value="SAVE" class="btn btn-secondary" (click)="addVino(vinoForm)">
+          </form>
+        </div>
+      </div>
+    </div>
+       
+    <div class="col-md-8">
+      <table class="table table-striped">
+        <thead>
+          <th>Nombre</th>      
+          <th>Denominacion</th>
+          <th>Precio</th>
+          <th>Color</th>
+          <th>Tipo</th>
+          <th>Path</th>
+          <th>Cantidad</th>
+          <th>Precio total</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let vino of vinoService.vinos">
+            <td>{{ vino.nombre }}</td>
+            <td>{{ vino.denominacion }}</td>      
+            <td>{{ vino.precio }}</td>
+            <td>{{ vino.color }}</td>
+            <td>{{ vino.tipo }}</td>
+            <td>{{ vino.imagePath }}</td>
+            <td>{{ vino.cantidad }}</td>
+            <td>{{ vino.precioTotal }}</td>
+            <td>
+              <a (click)="editVino(vino)" class="btn btn-secondary btn-sm">
+                <i class="material-icons">edit</i>
+              </a>
+              <a (click)="deleteVino(vino._id, vinoForm)" class="btn btn-danger btn-sm">
+                <i class="material-icons">delete</i>
+              </a>
+              <!-- <a (click)="ejercicio20(vino._id)" class="btn btn-primary btn-sm">
+                <i class="material-icons">delete</i>
+              </a> -->
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    </div> 
+    <app-ejercicio14-p [producto]="producto"></app-ejercicio14-p>
+</body>
+</html>

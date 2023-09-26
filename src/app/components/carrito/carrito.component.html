@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul *ngFor="let item of pedido">
+        <div class="vinos">
+            <p style="font-size: 20px;">{{item.nombre}}</p>
+            <p>Cantidad: {{item.cantidad}}</p>
+            <h3>Precio: {{item.precioTotal}}</h3>           
+        </div>  
+        <hr>    
+    </ul>
+    <h2>Total: {{precioTotal}}</h2>
+    <div class="bottns" *ngIf="precioTotal>0">
+        <button class="boton" (click)="verDetalles()">
+            <img src="../../../assets/imgs/shoppingcart.ico" alt="" srcset="" width="70px" height="70px">
+        </button>
+        <button class="btn btn-primary" (click)="comprar()">Comprar</button>
+    </div>
+    <!-- <app-ejercicio3></app-ejercicio3> -->
+    <!-- <button (click)="comprarEj10()" class="btn btn-secondary">Ejercicio 10</button> -->
+    <!-- <button (click)="comprarEjercicio28()" class="btn btn-secondary">Ejercicio extra</button> -->
+    <!-- <app-ejercicio11></app-ejercicio11> -->
+</body>
+</html>

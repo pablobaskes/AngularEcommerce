@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label class="d-block">Precio:</label>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="price" value="0-5" [(ngModel)]="price" (change)="onOptionChange()">
+          <label class="form-check-label">Hasta 5€</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="price" value="5-10" [(ngModel)]="price" (change)="onOptionChange()">
+          <label class="form-check-label">Entre 5 y 10€</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="price" value="10-20" [(ngModel)]="price" (change)="onOptionChange()">
+          <label class="form-check-label">Entre 10 y 20€</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="price" value="20.01" [(ngModel)]="price" (change)="onOptionChange()">
+          <label class="form-check-label">Mas de 20 €</label>
+        </div>
+        <br>
+        <label>Denominacion:</label>
+        <select class="form-control" name="region" [(ngModel)]="region" (change)="onOptionChange()">
+          <option value="Rioja">Rioja</option>
+          <option value="Ribera">Ribera</option>
+        </select>
+        <br>
+        <label>Color:</label>
+        <select class="form-control" name="type" [(ngModel)]="color" (change)="onOptionChange()">
+          <option value="blanco">Blanco</option>
+          <option value="tinto">Tinto</option>
+          <option value="rosado">Rosado</option>
+        </select>
+        <label>Tipo:</label>
+        <select class="form-control" name="type" [(ngModel)]="type" (change)="onOptionChange()">
+          <option value="Reserva">Reserva</option>
+          <option value="Crianza">Crianza</option>
+          <option value="Gran Reserva">Gran Reserva</option>
+        </select>
+      </form>
+      
+</body>
+</html>

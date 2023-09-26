@@ -1,0 +1,15 @@
+.bar{
+    width: 50%;
+    float: right;
+}
+.categories{
+    display: inline;
+    margin-left: 50px;
+    
+}
+body{
+    width: 100%;
+}
+.compras{
+    margin-left: 300px;
+}

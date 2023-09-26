@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body> 
+  <!-- <p *ngIf="vinos.length==0">{{mensaje}}</p> -->
+  
+  <div class="card" style="width: 18rem;" *ngFor="let vino of vinos |categorias:filtro | buscador:cad |denominacion:denominacion">
+    
+    <img class="card-img-top" [src]="vino.imagePath" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{vino.nombre}}</h5>
+      <p class="card-text">Descripcion de ejemplo</p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Precio: {{vino.precio}}€</li>
+      <li class="list-group-item">Denominacion: {{vino.denominacion}}</li>
+      <li class="list-group-item">Color: {{vino.color}}</li>
+      <li class="list-group-item">Tipo: {{vino.tipo}}</li>
+    </ul>
+    <div class="card-body">
+       
+      <button class="cart" (click)="addWine(vino)">
+        <span>Añadir al carro</span>
+        <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+      </button>
+      
+    </div>
+  </div>  
+  <!-- <app-ejercicio7 [vinos]="vinosEj7"></app-ejercicio7>  -->
+</body>
+</html>

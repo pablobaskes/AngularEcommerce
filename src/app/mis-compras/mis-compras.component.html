@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <button class="btn btn-primary" (click)="verpedidos()">Ver mis pedidos</button>
+    <main>
+      
+        <div class="pedidos" *ngFor="let pedido of pedidos | miscompras:userId">
+          <ng-container *ngFor="let vino of pedido.pedido">
+          <table class="table table-striped">
+            <thead>
+              <th scope="col">Vino</th>
+              <th scope="col">Precio</th>
+              <th scope="col">Cantidad</th>
+            </thead>
+            <tbody>
+              <tr>   
+                  <td>{{vino.nombre}}</td>
+                  <td>{{vino.precio}}€</td>
+                  <td>{{vino.cantidad}}Uds</td>                       
+              </tr>
+            </tbody>
+          </table>
+          </ng-container> 
+        </div>
+        <!-- <app-ejercicio8-h [numCompras]="numCompras" (itemEmitter)="recibir($event)"></app-ejercicio8-h> -->
+    </main>
+    <!-- <app-ejercicio12></app-ejercicio12> -->
+    <!-- <app-ejercicio13 [pedidos]="pedidoAux"></app-ejercicio13> -->
+</body>
+</html>

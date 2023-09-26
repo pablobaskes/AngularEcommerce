@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="search" name="" id="" [(ngModel)]="prod">
+    <button (click)="buscar()" class="btn btn-secondary">Buscar</button>
+    <button (click)="buscarDelUsuario()" class="btn btn-secondary">Buscar en el usuario</button>
+    <p *ngIf="cant > 0">{{cant}}</p>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="row">
+
+      
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body p-4">
+      
+             
+              <form #usuarioForm="ngForm" >
+                
+                <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="UsuarioServiceService.selectedUsuario._id">
+      
+                <div class="form-group">
+                  <input type="text" name="nombre" #name="ngModel" [(ngModel)]="UsuarioServiceService.selectedUsuario.nombre"
+                    placeholder="Introduce tu nombre de usuario" class="form-control">
+                </div>
+      
+                <div class="form-group">
+                  <div class="input-field col-s12">
+                    <input type="password" name="pass" #name="ngModel" [(ngModel)]="UsuarioServiceService.selectedUsuario.pass"
+                      placeholder="introduce tu contraseña" class="form-control">
+                  </div>
+                </div>
+      
+             
+      
+                <button class="btn btn-primary mr-2" (click)="resetForm(usuarioForm)">Clean</button>
+                <input type="submit" value="SAVE" class="btn btn-secondary" (click)="addusuario(usuarioForm)">
+            </form>
+          </div>
+        </div>
+      </div>
+      
+     
+      <div class="col-md-8">
+        <table class="table table-striped">
+          <thead>
+            <th>Nombre</th>
+            <th>Contraseña</th>
+          
+          </thead>
+          <tbody>
+            <tr *ngFor="let usuario of UsuarioServiceService.usuarios">
+              <td>{{ usuario.nombre }}</td>
+              <td>{{ usuario.pass }}</td>
+           
+              <td>
+                <a (click)="editusuario(usuario)" class="btn btn-secondary btn-sm">
+                  <i class="material-icons">edit</i>
+                </a>
+                <a (click)="deleteusuario(usuario._id, usuarioForm)" class="btn btn-danger btn-sm">
+                  <i class="material-icons">delete</i>
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+      
+</body>
+</html>

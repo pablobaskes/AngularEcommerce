@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Frogowine</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <button type="button" class="btn btn-dark" (click)="updateRibera()">
+                    Ribera
+                </button>
+              </li>
+              <li class="nav-item">
+                <button class="btn btn-dark" (click)="updateRioja()">
+                    Rioja
+                </button>
+              </li>         
+                <li class="nav-item">
+                  <button class="btn btn-dark" (click)="navegar()">
+                      Mis compras
+                  </button>
+                </li>  
+                <li class="nav-item">
+                  <button class="btn btn-dark" (click)="logout()">
+                      Cerrar Sesion
+                  </button>
+                </li>                         
+            </ul>   
+                <div class="bar">
+                    <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" [(ngModel)]="cad" (ngModelChange)="updateData()">
+                </div>
+          </div>
+        </div>
+      </nav>
+    <!-- <div class="categories">
+        <button class="btn btn-primary" (click)="updateRibera()">
+            Ribera
+        </button>
+        <button class="btn btn-primary" (click)="updateRioja()">
+            Rioja
+        </button>
+    </div>
+    <div class="bar">
+        <div class="form-outline">
+            <input type="search" id="form1" class="form-control" placeholder="Buscar" aria-label="Search" [(ngModel)]="cad" (ngModelChange)="updateData()"/>
+        </div>
+    </div> -->
+</body>
+</html>
